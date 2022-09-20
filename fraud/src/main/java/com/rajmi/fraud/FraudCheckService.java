@@ -18,7 +18,7 @@ public class FraudCheckService {
                 FraudCheckHistory.builder()
                 .studentId(studentId)
                 .isFraudster(false)
-                        .createdAt(LocalDateTime.now())
+                .createdAt(LocalDateTime.now())
                 .build()
         );
         return false;
