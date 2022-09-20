@@ -25,8 +25,7 @@ dependencies {
     implementation 'org.jvnet.hudson.plugins:URLSCM:1.5'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'org.postgresql:postgresql'
-    annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 }
 
 tasks.named('test') {

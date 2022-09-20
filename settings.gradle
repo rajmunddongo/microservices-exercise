@@ -1,4 +1,5 @@
 rootProject.name = 'microservices'
 include 'Students'
 include 'fraud'
+include 'eureka'
 
