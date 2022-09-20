@@ -11,7 +11,7 @@ public class StudentService {
     private final RestTemplate restTemplate;
     private final StudentRepository studentRepository;
 
-<<<<<<< Updated upstream
+
 public void registerStudent(StudentRegistrationRequest studentRegistrationRequest){
     Student student=Student.builder()
             .name(studentRegistrationRequest.name())
@@ -21,7 +21,7 @@ public void registerStudent(StudentRegistrationRequest studentRegistrationReques
     studentRepository.saveAndFlush(student);
 
     FraudCheckResponse fraudCheckResponse= restTemplate.getForObject(
-            "http:localhost:8081/api/v1/fraud-check/{studentId}",
+            "http://localhost:8081/api/v1/fraud-check/{studentId}",
             FraudCheckResponse.class,
             student.getId()
     );
@@ -34,21 +34,3 @@ public void registerStudent(StudentRegistrationRequest studentRegistrationReques
 
 }
 }
-=======
-    public void registerStudent(StudentRegistrationRequest studentRegistrationRequest){
-        Student student=Student.builder()
-                .name(studentRegistrationRequest.name())
-                .university(studentRegistrationRequest.university())
-                .teacher(studentRegistrationRequest.teacher())
-                .build();
-        studentRepository.saveAndFlush(student);
-
-        FraudCheckResponse fraudCheckResponse= restTemplate.getForObject(
-                "http://localhost:8081/api/v1/fraud-check/{studentId}",
-                FraudCheckResponse.class,
-                student.getId()
-        );
-
-    }
-}
->>>>>>> Stashed changes
