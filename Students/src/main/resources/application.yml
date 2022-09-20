@@ -3,6 +3,7 @@ server:
 spring:
   application:
     name: student
+    ##DB name:student
   datasource:
     username: rajmi
     password: password
