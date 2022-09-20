@@ -12,6 +12,7 @@ public class FraudCheckService {
     private final FraudCheckHistoryRepository fraudCheckHistoryRepository;
 
 
+
     public boolean isFraudulentStudent(Integer studentId){
         fraudCheckHistoryRepository.save(
                 FraudCheckHistory.builder()
