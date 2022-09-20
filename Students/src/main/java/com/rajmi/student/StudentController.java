@@ -10,6 +10,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @AllArgsConstructor
+//if it fails put requestmapping here
 public class StudentController{
 
 
