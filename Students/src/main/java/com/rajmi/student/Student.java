@@ -24,4 +24,14 @@ public class Student {
     private String name;
     private String university;
     private String teacher;
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", university='" + university + '\'' +
+                ", teacher='" + teacher + '\'' +
+                '}';
+    }
 }
