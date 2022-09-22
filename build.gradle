@@ -25,6 +25,8 @@ dependencies {
     implementation 'org.jvnet.hudson.plugins:URLSCM:1.5'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'org.postgresql:postgresql'
+    // https://mvnrepository.com/artifact/io.github.openfeign/feign-core
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:3.1.4'
 
 }
 

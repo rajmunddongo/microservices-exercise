@@ -1,5 +1,7 @@
 package com.rajmi.student;
 
+import com.rajmi.clients.fraud.FraudCheckResponse;
+import com.rajmi.clients.fraud.FraudClient;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -10,6 +12,7 @@ public class StudentService {
 
     private final RestTemplate restTemplate;
     private final StudentRepository studentRepository;
+    private final FraudClient   fraudClient;
 
 
 public void registerStudent(StudentRegistrationRequest studentRegistrationRequest){
@@ -20,11 +23,8 @@ public void registerStudent(StudentRegistrationRequest studentRegistrationReques
             .build();
     studentRepository.saveAndFlush(student);
 
-    FraudCheckResponse fraudCheckResponse= restTemplate.getForObject(
-            "http://FRAUD/api/v1/fraud-check/{studentId}",
-            FraudCheckResponse.class,
-            student.getId()
-    );
+
+    FraudCheckResponse fraudCheckResponse = fraudClient.isFraudster(student.getId());
     if(fraudCheckResponse.isFraudster())
         try {
             throw new IllegalAccessException("Fraudster detected!");

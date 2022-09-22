@@ -1,6 +1,7 @@
 package com.rajmi.fraud;
 
 
+import com.rajmi.clients.fraud.FraudCheckResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
