@@ -21,7 +21,7 @@ public void registerStudent(StudentRegistrationRequest studentRegistrationReques
     studentRepository.saveAndFlush(student);
 
     FraudCheckResponse fraudCheckResponse= restTemplate.getForObject(
-            "http://localhost:8081/api/v1/fraud-check/{studentId}",
+            "http://FRAUD/api/v1/fraud-check/{studentId}",
             FraudCheckResponse.class,
             student.getId()
     );
