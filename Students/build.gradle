@@ -17,10 +17,12 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.jvnet.hudson.plugins:URLSCM:1.5'
     compileOnly 'org.projectlombok:lombok'
+    compileOnly project(':clients')
     runtimeOnly 'org.postgresql:postgresql'
     annotationProcessor 'org.projectlombok:lombok'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:3.1.4'
     //testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:3.1.4'
 }
 
 test {
