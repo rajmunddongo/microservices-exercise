@@ -2,6 +2,8 @@ package com.rajmi.student;
 
 import com.rajmi.clients.fraud.FraudCheckResponse;
 import com.rajmi.clients.fraud.FraudClient;
+import com.rajmi.clients.notification.NotificationClient;
+import com.rajmi.clients.notification.NotificationRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -10,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 @AllArgsConstructor
 public class StudentService {
 
-    private final RestTemplate restTemplate;
+    private final NotificationClient notificationClient;
     private final StudentRepository studentRepository;
     private final FraudClient   fraudClient;
 
@@ -31,6 +33,14 @@ public void registerStudent(StudentRegistrationRequest studentRegistrationReques
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
+    notificationClient.sendNotification(
+            new NotificationRequest(
+                    student.getId(),
+                    String.format("Hi %s, welcome to the classroom.",
+                            student.getName())
+            )
+    );
+
 
 }
 }
