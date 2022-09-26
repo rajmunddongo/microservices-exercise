@@ -6,3 +6,7 @@ Featured technologies:
 
 - Spring Boot
 - Gradle
+- Feign
+- Eureka
+- Docker
+- PostgreSQL
