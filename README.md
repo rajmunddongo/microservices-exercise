@@ -10,3 +10,4 @@ Featured technologies:
 - Eureka
 - Docker
 - PostgreSQL
+- Log4j2
