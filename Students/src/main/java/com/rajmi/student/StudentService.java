@@ -36,6 +36,7 @@ public void registerStudent(StudentRegistrationRequest studentRegistrationReques
     notificationClient.sendNotification(
             new NotificationRequest(
                     student.getId(),
+                    student.getName(),
                     String.format("Hi %s, welcome to the classroom.",
                             student.getName())
             )
