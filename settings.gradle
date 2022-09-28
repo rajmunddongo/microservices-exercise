@@ -5,4 +5,5 @@ include 'eureka'
 include 'clients'
 include 'notification'
 include 'apigw'
+include 'amqp'
 
