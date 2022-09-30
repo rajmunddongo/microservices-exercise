@@ -2,7 +2,7 @@
 
 A simple microservices architecture for exercise.
 
-Featured technologies:
+### Featured technologies:
 
 - Spring Boot
 - Gradle
